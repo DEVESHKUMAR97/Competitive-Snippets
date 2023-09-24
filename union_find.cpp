@@ -39,10 +39,34 @@ class UnionFind {
         }
         return false;
     }
+
+    // number of connected components
     int getNCC() {
         return ncc;
     }
+
+    // largest component size
     int getLCS() {
         return lcs;
+    }
+
+    // return the size of connected component of node u
+    int getSizeOfCC(int u) {
+        u = find(u);
+        return abs(parent[u]);
+    }
+
+    void printParent() {
+        for(int p: parent) {
+            cout << p << ", ";
+        }
+        cout << endl;
+    }
+
+    void printRank() {
+        for(int r: rankk) {
+            cout << r << ", ";
+        }
+        cout << endl;
     }
 };
